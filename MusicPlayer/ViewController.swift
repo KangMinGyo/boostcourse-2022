@@ -104,5 +104,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.player.currentTime = TimeInterval(sender.value)
         
     }
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        playAndPauseButton.setImage(UIImage(named: "play_button"), for: .normal)
+    }
 }
 
