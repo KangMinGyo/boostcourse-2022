@@ -60,6 +60,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             //움직이는 원(?)
             self.timeSlider.value = Float(self.player.currentTime)
         })
+        self.timer.fire()
     }
     
     func updateTimeLabel(time: TimeInterval) {
@@ -98,6 +99,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     //MARK: - Slider changed (Action)
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         //slider 조절했을 때
+        self.updateTimeLabel(time: TimeInterval(sender.value))
+        if sender.isTracking { return }
+        self.player.currentTime = TimeInterval(sender.value)
+        
     }
 }
 
