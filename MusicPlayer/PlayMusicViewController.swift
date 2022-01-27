@@ -10,6 +10,7 @@ import AVFoundation
 
 class PlayMusicViewController: UIViewController, AVAudioPlayerDelegate {
 
+    @IBOutlet weak var musicNameLabel: UILabel!
     @IBOutlet weak var playAndPauseButton: UIButton!
     @IBOutlet weak var timeSlider: UISlider!
     @IBOutlet weak var leftTimeLabel: UILabel!
