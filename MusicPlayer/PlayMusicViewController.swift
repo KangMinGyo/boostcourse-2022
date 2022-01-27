@@ -15,6 +15,7 @@ class PlayMusicViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var timeSlider: UISlider!
     @IBOutlet weak var leftTimeLabel: UILabel!
     @IBOutlet weak var rightTimeLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     var player: AVAudioPlayer!
     var timer: Timer!
@@ -24,12 +25,13 @@ class PlayMusicViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        musicNameLabel.text = musicName
         initaliizePlayer()
     }
     
     func initaliizePlayer() {
         //음악파일 가져오기
-        guard let soundAsset: NSDataAsset = NSDataAsset(name: "Luxery") else {
+        guard let soundAsset: NSDataAsset = NSDataAsset(name: "\(musicName!)") else {
             print("음악 파일이 존재하지 않습니다.")
             return
         }
@@ -77,6 +79,7 @@ class PlayMusicViewController: UIViewController, AVAudioPlayerDelegate {
         self.timer.invalidate()
         self.timer = nil
     }
+
     
     //MARK: - Play Button (Action)
     @IBAction func playMusicButton(_ sender: UIButton) {
@@ -107,6 +110,14 @@ class PlayMusicViewController: UIViewController, AVAudioPlayerDelegate {
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         playAndPauseButton.setImage(UIImage(named: "play_button"), for: .normal)
+    }
+    
+    //MARK: - 앞으로가기_음악 (Action)
+    @IBAction func forwardMusicButton(_ sender: UIButton) {
+    }
+    
+    //MARK: - 뒤로가기_음악 (Action)
+    @IBAction func backMusicButton(_ sender: UIButton) {
     }
 }
 
