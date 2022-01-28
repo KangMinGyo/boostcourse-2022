@@ -108,16 +108,19 @@ class PlayMusicViewController: UIViewController, AVAudioPlayerDelegate {
         self.player.currentTime = TimeInterval(sender.value)
         
     }
+    
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+        guard let error = error else {
+            print("audioPlayer Decode 오류 발생")
+            return
+        }
+
+    }
+    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         playAndPauseButton.setImage(UIImage(named: "play_button"), for: .normal)
     }
     
-    //MARK: - 앞으로가기_음악 (Action)
-    @IBAction func forwardMusicButton(_ sender: UIButton) {
-    }
-    
-    //MARK: - 뒤로가기_음악 (Action)
-    @IBAction func backMusicButton(_ sender: UIButton) {
-    }
+
 }
 
