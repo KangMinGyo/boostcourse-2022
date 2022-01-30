@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BasicViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class BasicInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var ProfileImageView: UIImageView!
     @IBOutlet weak var idTextField: UITextField!
@@ -58,7 +58,6 @@ class BasicViewController: UIViewController, UIImagePickerControllerDelegate, UI
         idTextField.text = ""
         passwordTextField.text = ""
         passwordCheckTextField.text = ""
-        selfIntroduceTextView.text = ""
     }
     
     // MARK: - Next Button
