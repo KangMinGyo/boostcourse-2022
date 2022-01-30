@@ -99,11 +99,17 @@
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                        <connections>
+                                            <action selector="calcelButton:" destination="HJw-qf-rgu" eventType="touchUpInside" id="m2v-Cn-dsO"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2c-Jn-51W">
                                         <rect key="frame" x="171" y="0.0" width="83" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="다음"/>
+                                        <connections>
+                                            <action selector="nextButton:" destination="HJw-qf-rgu" eventType="touchUpInside" id="43c-f0-dLX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -117,20 +123,29 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="wF5-8U-1e4">
                                 <rect key="frame" x="158" y="30" width="236" height="128"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="isx-Ed-CKM">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="isx-Ed-CKM">
                                         <rect key="frame" x="0.0" y="0.0" width="236" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldValueChanged:" destination="HJw-qf-rgu" eventType="editingDidEnd" id="iV3-nU-0ky"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RaQ-fp-02Q">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="패스워드를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RaQ-fp-02Q">
                                         <rect key="frame" x="0.0" y="47" width="236" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="textFieldValueChanged:" destination="HJw-qf-rgu" eventType="editingDidEnd" id="Uv3-s9-aCv"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C6S-wm-JeT">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="패스워드 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C6S-wm-JeT">
                                         <rect key="frame" x="0.0" y="94" width="236" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="textFieldValueChanged:" destination="HJw-qf-rgu" eventType="editingDidEnd" id="fzO-Ua-zJC"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -156,6 +171,11 @@
                     <navigationItem key="navigationItem" id="5KN-hz-yFb"/>
                     <connections>
                         <outlet property="ProfileImageView" destination="xlE-P4-dec" id="78G-3g-g82"/>
+                        <outlet property="idTextField" destination="isx-Ed-CKM" id="xqw-eT-kNS"/>
+                        <outlet property="nextUIButton" destination="S2c-Jn-51W" id="0o3-gS-YRw"/>
+                        <outlet property="passwordCheckTextField" destination="C6S-wm-JeT" id="dqB-KZ-S2U"/>
+                        <outlet property="passwordTextField" destination="RaQ-fp-02Q" id="1H6-bl-qwd"/>
+                        <outlet property="selfIntroduceTextView" destination="P0s-Rv-vAa" id="2wc-d2-18V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YND-fF-0Do" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
