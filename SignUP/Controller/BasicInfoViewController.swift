@@ -73,7 +73,8 @@ class BasicInfoViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
-        print("다음")
+        UserInfomation.shered.id = idTextField.text
+        UserInfomation.shered.password = passwordTextField.text
     }
     /*
     // MARK: - Navigation

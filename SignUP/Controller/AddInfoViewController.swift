@@ -44,6 +44,9 @@ class AddInfoViewController: UIViewController {
         dateLabel.text = dateString
     }
     
+    @IBAction func tapView(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
     
     /*
     // MARK: - Navigation
