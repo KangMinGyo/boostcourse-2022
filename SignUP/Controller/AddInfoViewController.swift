@@ -44,6 +44,10 @@ class AddInfoViewController: UIViewController {
         dateLabel.text = dateString
     }
     
+    @IBAction func signUp(_ sender: UIButton) {
+        UserInfomation.shered.phoneNumber = phoneNumberTextField.text
+    }
+    
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }

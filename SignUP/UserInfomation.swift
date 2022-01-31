@@ -12,4 +12,5 @@ class UserInfomation {
     
     var id: String?
     var password: String?
+    var phoneNumber: String?
 }
