@@ -9,30 +9,33 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var numberOfCell: Int = 10
     let cellIdentifier: String = "cell"
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    private var data = Data()
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberOfCell
+        return data.imageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
-        
-//        cell.nameLabel.text = "연필"
+        let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+    
+        cell.albumImage.image = data.imageArray[indexPath.item]
         
         return cell
     }
-    
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        collectionView.dataSource = self
+        collectionView.delegate = self
+
+        let nibName = UINib(nibName: "CollectionViewCell", bundle: nil)
+        collectionView.register(nibName, forCellWithReuseIdentifier: "cell")
+
+//         Do any additional setup after loading the view.
         let flowLayout: UICollectionViewFlowLayout
         flowLayout = UICollectionViewFlowLayout()
         flowLayout.sectionInset = UIEdgeInsets.zero
@@ -40,7 +43,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         flowLayout.minimumLineSpacing = 10
 
         let halfWidth: CGFloat = UIScreen.main.bounds.width / 2.0
-        flowLayout.estimatedItemSize = CGSize(width: 90, height: 90)
+        flowLayout.estimatedItemSize = CGSize(width: 210, height: 210)
         self.collectionView.collectionViewLayout = flowLayout
     }
 
