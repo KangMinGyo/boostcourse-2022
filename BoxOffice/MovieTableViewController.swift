@@ -18,6 +18,7 @@ class MovieTableViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view.
         
         title = "예매율순"
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,22 +33,24 @@ class MovieTableViewController: UIViewController, UITableViewDataSource {
         cell.movieTitleLabel.text = movies.title
         cell.movieInfoLabel.text = movies.full
         cell.releaseLabel.text = movies.date
-        cell.imageView?.image = nil
+        cell.imageView?.image = nil //셀이 재사용되기전에 삭제
         
+        print("썸네일 : " + movies.thumb)
+        
+        //백그라운드 Queue
         DispatchQueue.global().async {
-            guard let imageURL: URL = URL(string: movies.thumb) else { return }
+            guard let imageURL: URL = URL(string: movies.thumbnail[indexPath.row]) else { return }
             guard let imageData: Data = try? Data(contentsOf: imageURL) else { return }
             
             DispatchQueue.main.async {
-                
-                if let index: IndexPath = tableView.indexPath(for: cell) {
+                if let index: IndexPath = self.movieTableView.indexPath(for: cell) {
                     if index.row == indexPath.row {
                         cell.thumbImageView?.image = UIImage(data: imageData)
+                        cell.setNeedsLayout()
+                        cell.layoutIfNeeded()
                     }
                 }
-                
             }
-
         }
         return cell
     }
@@ -72,7 +75,11 @@ class MovieTableViewController: UIViewController, UITableViewDataSource {
             do {
                 let apiResponse: APIResponse = try JSONDecoder().decode(APIResponse.self, from: data)
                 self.movie = apiResponse.movies
-                self.movieTableView.reloadData()
+                
+                DispatchQueue.main.async {
+                    self.movieTableView.reloadData()
+                }
+
             } catch(let err) {
                 print(err.localizedDescription)
             }
