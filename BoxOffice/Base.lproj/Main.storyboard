@@ -27,42 +27,41 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0c7-0m-NGC">
-                                                    <rect key="frame" x="20" y="11" width="80" height="103"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0c7-0m-NGC">
+                                                    <rect key="frame" x="20" y="12" width="80" height="100.5"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="103" id="0IR-Hx-ebg"/>
                                                         <constraint firstAttribute="height" constant="103" id="AJx-Br-xXI"/>
                                                         <constraint firstAttribute="width" constant="80" id="DI5-Go-tHI"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="mMz-6K-WVM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Od-za-G0r">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="영화제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Od-za-G0r">
                                                     <rect key="frame" x="108" y="11" width="286" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평점 : 0.00 예매순위 : 0 예매율 : 00.0 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOX-Wx-ygs">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="평점 : 0.00 예매순위 : 0 예매율 : 00.0 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOX-Wx-ygs">
                                                     <rect key="frame" x="108" y="44" width="279" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개봉일 : 0000-00-00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3O-cI-EJH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개봉일 : 0000-00-00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3O-cI-EJH">
                                                     <rect key="frame" x="108" y="76" width="155" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="P3O-cI-EJH" firstAttribute="leading" secondItem="0c7-0m-NGC" secondAttribute="trailing" constant="8" id="28i-hz-xdh"/>
-                                                <constraint firstItem="TOX-Wx-ygs" firstAttribute="leading" secondItem="0c7-0m-NGC" secondAttribute="trailing" constant="8" id="6m0-P2-xC7"/>
-                                                <constraint firstItem="4Od-za-G0r" firstAttribute="leading" secondItem="0c7-0m-NGC" secondAttribute="trailing" constant="8" id="7ip-rI-Hei"/>
-                                                <constraint firstItem="P3O-cI-EJH" firstAttribute="top" secondItem="TOX-Wx-ygs" secondAttribute="bottom" constant="10" id="ASp-4o-z91"/>
-                                                <constraint firstItem="TOX-Wx-ygs" firstAttribute="top" secondItem="4Od-za-G0r" secondAttribute="bottom" constant="5" id="Jtx-Wv-pw9"/>
-                                                <constraint firstItem="4Od-za-G0r" firstAttribute="trailing" secondItem="LgG-lN-qOD" secondAttribute="trailingMargin" id="Z9e-a2-Kj5"/>
-                                                <constraint firstItem="0c7-0m-NGC" firstAttribute="top" secondItem="LgG-lN-qOD" secondAttribute="topMargin" id="cbA-Y8-DeN"/>
-                                                <constraint firstItem="4Od-za-G0r" firstAttribute="top" secondItem="LgG-lN-qOD" secondAttribute="topMargin" id="htU-Cv-zYP"/>
-                                                <constraint firstItem="0c7-0m-NGC" firstAttribute="leading" secondItem="LgG-lN-qOD" secondAttribute="leadingMargin" id="vR2-tz-jHS"/>
+                                                <constraint firstItem="0c7-0m-NGC" firstAttribute="leading" secondItem="LgG-lN-qOD" secondAttribute="leadingMargin" id="2bA-vg-hDH"/>
+                                                <constraint firstItem="0c7-0m-NGC" firstAttribute="top" secondItem="LgG-lN-qOD" secondAttribute="topMargin" id="Npp-J1-Bzs"/>
+                                                <constraint firstItem="0c7-0m-NGC" firstAttribute="bottom" secondItem="LgG-lN-qOD" secondAttribute="bottomMargin" id="yLN-O0-6Kt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -181,6 +180,7 @@
     </scenes>
     <resources>
         <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="square.grid.3x3" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

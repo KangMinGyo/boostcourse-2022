@@ -21,10 +21,10 @@ struct Movies: Codable {
     let user_rating: Double //평점
     let reservation_grade: Int //순위
     
-//    //평점 순위 예매율
-//    var full: String {
-//        return String(format: user_rating)
-//    }
-//    
+    //평점 순위 예매율
+    var full: String {
+        return "평점: " + String(format: "%.2f", user_rating) + " 순위: " + String(reservation_grade) + " 예매율: " + String(format: "%.2f", reservation_rate)
+    }
+    
 
 }

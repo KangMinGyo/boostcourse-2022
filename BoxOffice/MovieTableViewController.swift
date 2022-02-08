@@ -30,7 +30,7 @@ class MovieTableViewController: UIViewController, UITableViewDataSource {
         let movies: Movies = self.movie[indexPath.row]
         
         cell.movieTitleLabel.text = movies.title
-//        cell.movieInfoLabel.text = movies.user_rating
+        cell.movieInfoLabel.text = movies.full
         cell.releaseLabel.text = movies.date
         cell.imageView?.image = nil
         
