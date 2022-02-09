@@ -16,7 +16,6 @@ class MovieTableViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         title = "예매율순"
 
     }
@@ -85,6 +84,23 @@ class MovieTableViewController: UIViewController, UITableViewDataSource {
             }
         }
         dataTask.resume()
+    }
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextViewController: MovieInfoTableViewController = segue.destination as? MovieInfoTableViewController else {
+            return
+        }
+        
+        guard let cell: MovieTableViewCell = sender as? MovieTableViewCell else {
+            return
+        }
+        
+        nextViewController.movieName = cell.movieTitleLabel?.text
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
 
 }
