@@ -17,6 +17,7 @@
 		3D84374F27B1314600BEBDF6 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D84374E27B1314600BEBDF6 /* MovieTableViewCell.swift */; };
 		3D84375227B2593200BEBDF6 /* MovieCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D84375127B2593200BEBDF6 /* MovieCollectionViewController.swift */; };
 		3D84375427B3430500BEBDF6 /* MovieInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D84375327B3430500BEBDF6 /* MovieInfoTableViewController.swift */; };
+		3D84375627B38A5400BEBDF6 /* MovieInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D84375527B38A5400BEBDF6 /* MovieInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3D84374E27B1314600BEBDF6 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		3D84375127B2593200BEBDF6 /* MovieCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewController.swift; sourceTree = "<group>"; };
 		3D84375327B3430500BEBDF6 /* MovieInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoTableViewController.swift; sourceTree = "<group>"; };
+		3D84375527B38A5400BEBDF6 /* MovieInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				3D84373C27AFC64D00BEBDF6 /* MovieTableViewController.swift */,
 				3D84375127B2593200BEBDF6 /* MovieCollectionViewController.swift */,
 				3D84375327B3430500BEBDF6 /* MovieInfoTableViewController.swift */,
+				3D84375527B38A5400BEBDF6 /* MovieInfoModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				3D84373D27AFC64D00BEBDF6 /* MovieTableViewController.swift in Sources */,
 				3D84373927AFC64D00BEBDF6 /* AppDelegate.swift in Sources */,
 				3D84374D27AFFB8100BEBDF6 /* Model.swift in Sources */,
+				3D84375627B38A5400BEBDF6 /* MovieInfoModel.swift in Sources */,
 				3D84373B27AFC64D00BEBDF6 /* SceneDelegate.swift in Sources */,
 				3D84375427B3430500BEBDF6 /* MovieInfoTableViewController.swift in Sources */,
 				3D84375227B2593200BEBDF6 /* MovieCollectionViewController.swift in Sources */,

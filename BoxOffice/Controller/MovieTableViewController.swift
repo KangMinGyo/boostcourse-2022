@@ -12,6 +12,7 @@ class MovieTableViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var movieTableView: UITableView!
     let cellIdentifier = "movieCell"
     var movie: [Movies] = []
+    var id: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +29,13 @@ class MovieTableViewController: UIViewController, UITableViewDataSource {
         let cell: MovieTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! MovieTableViewCell
         
         let movies: Movies = self.movie[indexPath.row]
-        
         cell.movieTitleLabel.text = movies.title
         cell.movieInfoLabel.text = movies.full
         cell.releaseLabel.text = movies.date
+        cell.idLabel.text = movies.id
         cell.imageView?.image = nil //셀이 재사용되기전에 삭제
         
-        print("썸네일 : " + movies.thumb)
+//        print("썸네일 : " + movies.thumb)
         
         //백그라운드 Queue
         DispatchQueue.global().async {
@@ -90,6 +91,7 @@ class MovieTableViewController: UIViewController, UITableViewDataSource {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         guard let nextViewController: MovieInfoTableViewController = segue.destination as? MovieInfoTableViewController else {
             return
         }
@@ -99,6 +101,8 @@ class MovieTableViewController: UIViewController, UITableViewDataSource {
         }
         
         nextViewController.movieName = cell.movieTitleLabel?.text
+        nextViewController.id = cell.idLabel?.text
+        nextViewController.Image = cell.thumbImageView.image
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }

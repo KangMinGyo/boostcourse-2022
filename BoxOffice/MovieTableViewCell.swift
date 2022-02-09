@@ -13,6 +13,7 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieInfoLabel: UILabel!
     @IBOutlet weak var releaseLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
     
     
     override func awakeFromNib() {
