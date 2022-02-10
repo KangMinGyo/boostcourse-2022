@@ -7,13 +7,15 @@
 
 import UIKit
 
-class MovieInfoTableViewController: UIViewController {
+class MovieInfoTableViewController: UIViewController, UITableViewDataSource {
     
     var movieInfo: [MovieInfo] = []
+    var movieComment: [Comments] = []
 //    var movie: [Movies] = []
     var movieName: String?
     var Image: UIImage?
     var id: String?
+
 
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
@@ -29,6 +31,9 @@ class MovieInfoTableViewController: UIViewController {
     @IBOutlet weak var movieDirector: UILabel!
     @IBOutlet weak var screenActor: UILabel!
     
+    @IBOutlet weak var movieCommentTableView: UITableView!
+    let cellIdentifier = "commentCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +41,22 @@ class MovieInfoTableViewController: UIViewController {
         title = movieName
         movieImage.image = Image
         print(id!)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("셀 갯수 : \(movieComment.count)")
+        return movieComment.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: MovieCommetTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! MovieCommetTableViewCell
+
+        let comment: Comments = self.movieComment[indexPath.row]
+        cell.nickNameLabel.text = comment.writer
+        cell.dateAndTimeLabel.text = String(comment.timestamp)
+        cell.commentLabel.text = comment.contents
+        
+        return cell
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,26 +92,45 @@ class MovieInfoTableViewController: UIViewController {
                     self.screenActor.text = apiResponse.actor
                 }
 
+            } catch(let err) {
+                print(err.localizedDescription)
+            }
+        }
+        
+        //MARK: Comment TableView
+        guard let commentUrl: URL = URL(string: "https://connect-boxoffice.run.goorm.io/comments?movie_id=\(id!)") else {
+            return
+        }
+        
+        let commentSession: URLSession = URLSession(configuration: .default)
+        let commentDataTask: URLSessionDataTask = commentSession.dataTask(with: commentUrl) { (data: Data?, response: URLResponse?, error: Error?) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let commentApiResponse: CommentAPIResponse = try JSONDecoder().decode(CommentAPIResponse.self, from: data)
+                self.movieComment = commentApiResponse.comment
                 
-//                for movie in movies {
-//                    self.movieTitle.text = movie.title
-//                }
                 
-                
-                
-//                DispatchQueue.main.async {
-//                    self.movieTableView.reloadData()
-//                }
+                DispatchQueue.main.async {
+                    self.movieCommentTableView.reloadData()
+                }
 
             } catch(let err) {
                 print(err.localizedDescription)
             }
         }
+        
         dataTask.resume()
+        commentDataTask.resume()
      
         }
 
-        
     }
 
 
