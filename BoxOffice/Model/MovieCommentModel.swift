@@ -8,13 +8,14 @@
 import Foundation
 
 struct CommentAPIResponse: Codable {
-    let comment: [Comments]
+    let comment: [comments]
+    let movie_id: String
 }
 
-struct Comments: Codable {
+struct comments: Codable {
     let writer: String
-    let rating: Int
-    let timestamp: Int
+    let rating: Double
+    let timestamp: Double
     let movie_id: String
     let id: String
     let contents: String

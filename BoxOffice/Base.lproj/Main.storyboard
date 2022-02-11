@@ -267,7 +267,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUW-B0-jST">
-                                                                    <rect key="frame" x="128" y="11" width="45" height="21"/>
+                                                                    <rect key="frame" x="128" y="11" width="242" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -410,7 +410,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="한줄평을 입력해주세요" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Z1X-FC-IsB">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Z1X-FC-IsB">
                                 <rect key="frame" x="20" y="165" width="374" height="446"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -423,8 +423,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="LKh-rj-ab4">
-                        <barButtonItem key="rightBarButtonItem" title="완료" id="0y5-3F-3Rb"/>
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="0y5-3F-3Rb">
+                            <connections>
+                                <action selector="touchUpCompleteButton:" destination="ZRL-vC-IDu" id="2eb-Yz-afV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nickNameTextField" destination="7oa-ji-0Yc" id="hiP-nt-Wfp"/>
+                        <outlet property="reviewTextView" destination="Z1X-FC-IsB" id="4wi-pz-cPZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNW-fN-s0P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,7 +10,7 @@ import UIKit
 class MovieInfoTableViewController: UIViewController, UITableViewDataSource {
     
     var movieInfo: [MovieInfo] = []
-    var movieComment: [Comments] = []
+    var movieComment: [comments] = []
 //    var movie: [Movies] = []
     var movieName: String?
     var Image: UIImage?
@@ -45,16 +45,16 @@ class MovieInfoTableViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("셀 갯수 : \(movieComment.count)")
-        return movieComment.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MovieCommetTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! MovieCommetTableViewCell
 
-        let comment: Comments = self.movieComment[indexPath.row]
-        cell.nickNameLabel.text = comment.writer
-        cell.dateAndTimeLabel.text = String(comment.timestamp)
-        cell.commentLabel.text = comment.contents
+//        let comment: comments = self.movieComment[indexPath.row]
+        cell.nickNameLabel.text = CommentInfomation.shared.nickName
+//        cell.dateAndTimeLabel.text = String(comment.timestamp)
+        cell.commentLabel.text = CommentInfomation.shared.comment
         
         return cell
     }

@@ -21,6 +21,7 @@
 		3D84375927B4DA0F00BEBDF6 /* MovieCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D84375827B4DA0F00BEBDF6 /* MovieCommentModel.swift */; };
 		3D84375B27B4DF8700BEBDF6 /* MovieCommetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D84375A27B4DF8700BEBDF6 /* MovieCommetTableViewCell.swift */; };
 		3D84375D27B4FC1600BEBDF6 /* MovieReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D84375C27B4FC1600BEBDF6 /* MovieReviewViewController.swift */; };
+		3D84376127B62C9D00BEBDF6 /* CommentInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D84376027B62C9D00BEBDF6 /* CommentInfomation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3D84375827B4DA0F00BEBDF6 /* MovieCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCommentModel.swift; sourceTree = "<group>"; };
 		3D84375A27B4DF8700BEBDF6 /* MovieCommetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCommetTableViewCell.swift; sourceTree = "<group>"; };
 		3D84375C27B4FC1600BEBDF6 /* MovieReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewViewController.swift; sourceTree = "<group>"; };
+		3D84376027B62C9D00BEBDF6 /* CommentInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInfomation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				3D84374C27AFFB8100BEBDF6 /* Model.swift */,
 				3D84375527B38A5400BEBDF6 /* MovieInfoModel.swift */,
 				3D84375827B4DA0F00BEBDF6 /* MovieCommentModel.swift */,
+				3D84376027B62C9D00BEBDF6 /* CommentInfomation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D84374F27B1314600BEBDF6 /* MovieTableViewCell.swift in Sources */,
+				3D84376127B62C9D00BEBDF6 /* CommentInfomation.swift in Sources */,
 				3D84373D27AFC64D00BEBDF6 /* MovieTableViewController.swift in Sources */,
 				3D84373927AFC64D00BEBDF6 /* AppDelegate.swift in Sources */,
 				3D84374D27AFFB8100BEBDF6 /* Model.swift in Sources */,
